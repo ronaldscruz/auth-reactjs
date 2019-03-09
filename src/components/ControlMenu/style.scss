@@ -1,0 +1,33 @@
+$bg: #2a3d45;
+
+svg{
+   margin-right: 7px;
+   margin-bottom: 2px;
+}
+
+.navbar{
+   font-size: 18px;
+}
+
+.navbar-brand{
+   margin-right: 20px;
+   font: {
+      weight: 900;
+   }
+}
+
+.nav-link{
+
+   &:after{
+      display: block;
+      border-bottom: 3px solid lighten($bg, 30%);
+      content: '';
+      transition: all 0.2s ease;
+      transform: scaleX(0);
+   }
+
+   &:hover:after{
+      color: white;
+      transform: scaleX(1);
+   }
+}

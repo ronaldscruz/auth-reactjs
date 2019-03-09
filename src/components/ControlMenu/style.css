@@ -1,0 +1,23 @@
+
+.navbar {
+  font-size: 18px;
+}
+
+.navbar-brand {
+  margin-right: 20px;
+  font-weight: 900;
+}
+
+.nav-link:after {
+  display: block;
+  border-bottom: 3px solid #6690a2;
+  content: "";
+  transition: all 0.2s ease;
+  transform: scaleX(0);
+}
+.nav-link:hover:after {
+  color: white;
+  transform: scaleX(1);
+}
+
+/*# sourceMappingURL=style.css.map */
