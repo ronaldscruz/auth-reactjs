@@ -4,7 +4,6 @@
 
 ### Auth
 - [ ] Authenticate
-- [ ] Register
 - [ ] Forgot Password
 - [ ] Reset Password
 
