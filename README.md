@@ -4,7 +4,7 @@
 
 ### Auth
 
-- [ ] Authenticate
+- [x] Authenticate
 - [ ] Forgot Password
 - [ ] Reset Password
 <br>
