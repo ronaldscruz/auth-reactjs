@@ -1,0 +1,82 @@
+/* 
+   #7a6c5d: marrom
+   #2a3d45: cinza escuro
+   #ddc9b4: areia
+   #bcac9b: cinza claro
+   #c17c74: salmão
+*/
+
+.form-window{
+   display: grid;
+   height: 100vh;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-areas:
+   ". . ."
+   ". content ."
+   ". . .";
+
+   @media screen and (max-width: 768px){
+      grid-template-columns: 1fr 9fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+      ". . ."
+      ". content ."
+      ". . .";
+   }
+}
+
+.form-wrapper{
+   grid-area: content;
+   background-color: #2a3d45;
+   color: white;
+   border-radius: 5px;
+   padding: 15px 25px;
+
+   .text-muted{
+      margin-top:7px;
+
+      a{
+         font-size: 14px;
+         text-decoration: none;
+         color:white;
+         opacity: 0.5;
+         transition: all .15s ease;
+   
+         &:hover{
+            color: white;
+            opacity: 1;
+         }
+      }
+   }
+
+   hr{
+      border-color: lighten(#2a3d45, 10%);
+   } 
+}
+
+.form-header{
+   display: flex;
+   justify-content: space-between;
+   height: 30px;
+
+   a{
+      text-decoration: none;
+      color: black;
+   }
+}
+
+#form-title{
+   font: {
+      size: 18px;
+      weight: 600;
+   }
+
+   @media screen and (max-width: 768px){
+      font-size: 16px;
+   }
+}
+
+#error{
+   color: rgb(219, 65, 65);
+}
