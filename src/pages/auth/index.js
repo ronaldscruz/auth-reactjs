@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {findDOMNode} from 'react-dom'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+import Info from '../../components/Info'
 
 import axios from 'axios'
 
@@ -11,15 +12,9 @@ import {
 } from 'react-bootstrap'
 
 import {
-   FaAt, FaKey, FaSignInAlt, FaUserAlt, FaExclamationCircle
+   FaAt, FaKey, FaSignInAlt, FaUserAlt
 } from 'react-icons/fa'
 
-function Error(props){
-   if(props.msg !== ""){
-      return <p id="error"><FaExclamationCircle/> {props.msg}</p>
-   }
-   return <p></p>
-}
 
 export default class Auth extends Component {
 
@@ -59,7 +54,8 @@ export default class Auth extends Component {
             <div className="form-wrapper">
                <h4> <FaUserAlt/> Enter your credentials</h4>
                <hr></hr>
-               <Error msg={this.state.errorReport}/>
+               {/* <Error msg={this.state.errorReport}/> */}
+               <Info msg={this.state.errorReport} infoType="error" />
                <Form method="post" name="auth" onSubmit={this.Auth} ref="auth">
                   <Form.Group controlId="email">
                      <Form.Label><FaAt/> E-mail </Form.Label>

@@ -15,7 +15,7 @@
 }
 @media screen and (max-width: 768px) {
   .form-window {
-    grid-template-columns: 1fr 9fr 1fr;
+    grid-template-columns: 1fr 20fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: ". . ." ". content ." ". . .";
   }
@@ -64,10 +64,6 @@
   #form-title {
     font-size: 16px;
   }
-}
-
-#error {
-  color: #db4141;
 }
 
 /*# sourceMappingURL=style.css.map */
