@@ -18,6 +18,10 @@ import {
 
 export default class Auth extends Component {
 
+   componentDidMount(){
+      document.title = "Sign In"
+   }
+
    constructor(props){
       super(props)
 
