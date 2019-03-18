@@ -1,0 +1,33 @@
+.wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.6fr 1fr;
+  grid-template-areas: ". . ." ". content ." ". . .";
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". . ." ". content ." ". . .";
+  }
+}
+
+.window {
+  grid-area: content;
+  grid-area: content;
+  background-color: #2a3d45;
+  color: white;
+  border-radius: 5px;
+  padding: 15px 25px;
+}
+.window hr {
+  border-color: #3d5965;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=style.css.map */
