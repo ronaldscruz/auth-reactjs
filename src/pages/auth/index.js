@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 import Info from '../../components/Info'
+import Footer from '../../components/Footer'
 
 import axios from 'axios'
 
@@ -20,6 +21,8 @@ export default class Auth extends Component {
 
    componentDidMount(){
       document.title = "Sign In"
+
+      localStorage.removeItem('token')
    }
 
    constructor(props){
@@ -73,6 +76,7 @@ export default class Auth extends Component {
                   <Button variation="primary" className="btn-block" type="submit" ><FaSignInAlt/> Sign in</Button>
                </Form>
             </div>
+            <Footer/>
          </div>
       );
    }
