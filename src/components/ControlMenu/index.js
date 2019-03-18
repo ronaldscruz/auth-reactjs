@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './style.css'
 
 import {
    Navbar, Nav, Form, Button
 } from 'react-bootstrap'
 
+import { LinkContainer } from 'react-router-bootstrap'
+
 import {
-   FaToolbox,
    FaPlusCircle,
    FaDoorOpen,
    FaUsersCog
 } from 'react-icons/fa'
 
 export default class ControlMenu extends Component{
+   constructor(props){
+      super(props)
+      
+      this.state = {}
+   }
+
    render(){
       return(
          <div className="menu">
             <Navbar bg="dark" variant="dark" expand="lg" text="white">
-               <Navbar.Brand href="/"><FaUsersCog/> Admin </Navbar.Brand>
+               <Navbar.Brand href="/"><FaUsersCog/> News Admin </Navbar.Brand>
                <Navbar.Toggle aria-controls="header-menu"></Navbar.Toggle>
                <Navbar.Collapse id="header-menu">
                   <Nav className="mr-auto">
-                     <Nav.Link href="/"><FaToolbox/>manage</Nav.Link>
-                     <Nav.Link href="/new"><FaPlusCircle/>create</Nav.Link>
+                  <LinkContainer to="/manage_news/create">
+                     <Nav.Link><FaPlusCircle/>create</Nav.Link>
+                  </LinkContainer>                   
                   </Nav>
                   <Form inline>
-                     <Button variant="outline-light btn-block"><FaDoorOpen/>Quit</Button>
+                     <Link to="/"><Button variant="outline-light btn-block"><FaDoorOpen/>Quit</Button></Link>
                   </Form>
                </Navbar.Collapse>
             </Navbar>
