@@ -11,13 +11,13 @@
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: ". . ." ". content ." ". . .";
+  grid-template-areas: ". . ." ". content ." "footer footer footer";
 }
 @media screen and (max-width: 768px) {
   .form-window {
     grid-template-columns: 1fr 20fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: ". . ." ". content ." ". . .";
+    grid-template-areas: ". . ." ". content ." "footer footer footer";
   }
 }
 
