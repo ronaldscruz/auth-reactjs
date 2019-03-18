@@ -40,6 +40,10 @@ export default class ForgotPassword extends Component{
          })
 
          this.setState({infoReport: response.data.ok, infoType: 'success'})
+         
+         setTimeout(() => {
+            return this.props.history.push('/')
+         },1500)
       }catch(err){
          this.setState({infoReport: err.response.data.error, infoType: 'error'})
       }
