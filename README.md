@@ -6,7 +6,7 @@
 
 - [x] Authenticate
 - [x] Forgot Password
-- [ ] Reset Password
+- [x] Reset Password
 <br>
 Password recovery is currently using MailTrap. So it doesn't works perfectly
 <br>
