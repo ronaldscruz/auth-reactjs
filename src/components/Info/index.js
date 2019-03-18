@@ -7,7 +7,7 @@ import {
 
 function Info(props){
 
-   if(props.msg.length < 2){
+   if(!(props.msg)){
       return <p></p>
    }
 
@@ -32,6 +32,7 @@ function Info(props){
       )
    }
 
+   return <p></p>
 }
  
 export default Info;
