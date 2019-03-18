@@ -7,7 +7,7 @@ import { FaRobot } from 'react-icons/fa'
 
 class NotFound extends Component {
    componentDidMount(){
-      document.title = "404"
+      document.title = "Error 404"
    }
 
    render() { 
