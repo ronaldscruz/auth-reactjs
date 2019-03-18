@@ -8,7 +8,7 @@ export default class Footer extends Component {
       return (
          <div className="footer">
             <div className="footer-content">
-               <p>Criado por: <a href="https://github.com/ronaldscruz" target="_blank"><FaGithubAlt/>ronaldscruz</a> </p>
+               <p>Criado por: <a href="https://github.com/ronaldscruz" target="_blank" rel="noopener noreferrer"><FaGithubAlt/>ronaldscruz</a> </p>
             </div>
          </div>
       );
