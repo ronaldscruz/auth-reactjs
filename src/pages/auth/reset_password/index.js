@@ -9,7 +9,7 @@ import {
 } from 'react-bootstrap'
 
 import {
-   FaKey, FaUserAlt, FaStar, FaAt
+   FaKey, FaUserAlt, FaStar
 } from 'react-icons/fa'
 
 import Info from '../../../components/Info'
@@ -30,23 +30,25 @@ export default class ResetPassword extends Component{
       document.title = "Reset Password"
    }
 
-   resetPwd(e){
+   async resetPwd(e){
       e.preventDefault()
 
       const form = Array.from(e.target.elements).map(inp => inp.value)
-      const [cEmail, newPwd, cNewPwd] = form
+      const [newPwd, cNewPwd] = form
 
       if(newPwd !== cNewPwd)
          return this.setState({infoReport: 'Passwords must match!'})
       
       try{
-         const response = axios.post(`http://auth-api-nodejs.herokuapp.com/auth/reset_password/${this.props.match.params.token}`, {
-            cEmail, newPwd
+         const response = await axios.post(`http://auth-api-nodejs.herokuapp.com/auth/reset_password/${this.props.match.params.token}/${this.props.match.params.userId}`, {
+            password: newPwd
          })
 
          this.setState({infoReport: response.data.ok, infoType: 'success'})
 
-         return this.props.history.push("/")
+         setTimeout(() => {
+            return this.props.history.push('/')
+         }, 1800)
       }catch(err){
          return this.setState({infoReport: err.response.data.error, infoType: 'error'})
       }
@@ -60,10 +62,6 @@ export default class ResetPassword extends Component{
                <hr></hr>
                <Info infoType={this.state.infoType} msg={this.state.infoReport} />
                <Form method="post" name="reset_password" onSubmit={this.resetPwd}>
-                  <Form.Group controlId="email">
-                     <Form.Label><FaAt/> Confirm email </Form.Label>
-                     <Form.Control type="email" name="email" placeholder="example@email.com" required></Form.Control>
-                  </Form.Group>
                   <Form.Group controlId="password">
                      <Form.Label><FaKey/> New password </Form.Label>
                      <Form.Control type="password" name="password" placeholder="********" required></Form.Control>
