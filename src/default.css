@@ -22,3 +22,7 @@ body{
 svg {
    margin: 0 7px 0 2px;
 }
+
+.footer{
+   grid-area: footer;
+}
