@@ -19,15 +19,18 @@ import {
 
 export default class Auth extends Component {
 
+   // Change page title to 'Sign in' and remove the authentication token
    componentDidMount(){
       document.title = "Sign In"
 
       localStorage.removeItem('token')
    }
 
+
    constructor(props){
       super(props)
 
+      // errorReport corresponds to the callback of API request
       this.state = {
          errorReport: ''
       }
@@ -38,6 +41,7 @@ export default class Auth extends Component {
    async Auth(e){
       e.preventDefault()
 
+      // Turn all form inputs into vars
       let data = Array.from(e.target.elements).map((inp) => inp.value)
       const [email, password] = data
 
@@ -46,9 +50,10 @@ export default class Auth extends Component {
             email, password
          })
 
+         // If the request works out, the app generate a new authentication token
          const token = 'Bearer '+response.data.token
          localStorage.setItem('token', token)
-
+         
          return this.props.history.push('/manage_news')
       }catch(err){
          this.setState({errorReport: err.response.data.error})

@@ -19,8 +19,13 @@ export default class ResetPassword extends Component{
       super(props)
 
       this.state = {
+         // infoType: error/success
          infoType:'',
+
+         // infoReport: callback
          infoReport: '',
+
+         // token: authentication token
          token: ''
       }
       this.resetPwd = this.resetPwd.bind(this)
@@ -36,6 +41,7 @@ export default class ResetPassword extends Component{
       const form = Array.from(e.target.elements).map(inp => inp.value)
       const [newPwd, cNewPwd] = form
 
+      // Check if passwords match
       if(newPwd !== cNewPwd)
          return this.setState({infoReport: 'Passwords must match!'})
       
@@ -44,6 +50,7 @@ export default class ResetPassword extends Component{
             password: newPwd
          })
 
+         // Display a 'success' message and redirect to homepage
          this.setState({infoReport: response.data.ok, infoType: 'success'})
 
          setTimeout(() => {

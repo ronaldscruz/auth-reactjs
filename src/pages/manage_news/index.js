@@ -10,15 +10,20 @@ export default class NewsPanel extends Component {
    constructor(props) {
       super(props);
       this.state = { 
-         authorized: false
+         authorized: false,
+
+         // Array that stores all news
+         allNewsData: []
       }
+
    }
 
    async componentWillMount(){
       document.title = "Manage News"
 
+      // Verify if there is a valid auth token
       try{
-         await axios.get('http://auth-api-nodejs.herokuapp.com/manage_news', {
+         const response = await axios.get('http://auth-api-nodejs.herokuapp.com/manage_news', {
             headers: {
                "Authorization": localStorage.getItem('token')
             }
@@ -32,6 +37,7 @@ export default class NewsPanel extends Component {
 
    render() { 
       return (
+         // If there is authorization, the component will be shown
          this.state.authorized === true &&
          <React.Fragment>
             <ControlMenu/>

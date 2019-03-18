@@ -14,6 +14,8 @@ import {
    FaUsersCog
 } from 'react-icons/fa'
 
+// Menu made for management page
+
 export default class ControlMenu extends Component{
    constructor(props){
       super(props)

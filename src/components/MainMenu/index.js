@@ -14,6 +14,7 @@ import {
 } from 'react-icons/fa'
 
 export default class MainMenu extends Component{
+   // This menu was made for a possible "client-friendly" homepage
    render(){
       return(
          <div className="menu">
