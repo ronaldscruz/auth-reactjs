@@ -1,0 +1,13 @@
+.content-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.3fr 1fr;
+  grid-template-areas: ". . ." ". main ." "footer footer footer";
+}
+
+.display {
+  grid-area: main;
+}
+
+/*# sourceMappingURL=style.css.map */
