@@ -31,9 +31,9 @@ export default class ControlMenu extends Component{
                <Navbar.Toggle aria-controls="header-menu"></Navbar.Toggle>
                <Navbar.Collapse id="header-menu">
                   <Nav className="mr-auto">
-                  <LinkContainer to="/manage_news/create">
-                     <Nav.Link><FaPlusCircle/>create</Nav.Link>
-                  </LinkContainer>                   
+                     <LinkContainer to="/manage_news/create">
+                        <Nav.Link><FaPlusCircle/>create</Nav.Link>
+                     </LinkContainer>                   
                   </Nav>
                   <Form inline>
                      <Link to="/"><Button variant="outline-light btn-block"><FaDoorOpen/>Quit</Button></Link>
