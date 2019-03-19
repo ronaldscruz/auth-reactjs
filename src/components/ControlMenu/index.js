@@ -27,7 +27,7 @@ export default class ControlMenu extends Component{
       return(
          <div className="menu">
             <Navbar bg="dark" variant="dark" expand="lg" text="white">
-               <Navbar.Brand href="/"><FaUsersCog/> News Admin </Navbar.Brand>
+               <Link to="/manage_news"><Navbar.Brand><FaUsersCog/> News Admin </Navbar.Brand></Link>
                <Navbar.Toggle aria-controls="header-menu"></Navbar.Toggle>
                <Navbar.Collapse id="header-menu">
                   <Nav className="mr-auto">
