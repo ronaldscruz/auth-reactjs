@@ -12,7 +12,7 @@ Password recovery is currently using MailTrap. So it doesn't works perfectly
 <br>
 
 ### Panel (News)
-- [ ] Show All
+- [x] Show All
 - [ ] Read One
 - [ ] Create
 - [ ] Delete
