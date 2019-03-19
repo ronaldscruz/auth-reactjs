@@ -53,7 +53,7 @@ export default class NewsPanel extends Component {
 
    render() { 
       const {title, date, location, lead, body, author} = this.state.newsData
-      console.log(title, date, author)
+      
       return (
          // If there is authorization, the component will be shown
          this.state.authorized === true &&

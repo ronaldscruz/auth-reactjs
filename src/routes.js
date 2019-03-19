@@ -13,22 +13,22 @@ import ForgotPassword from './pages/auth/forgot_password'
 // Panel
 import NewsPanel from './pages/manage_news'
 import NewsView from './pages/manage_news/read'
-import NewsUpdate from './pages/manage_news/create'
-import NewsCreate from './pages/manage_news/update'
+import NewsCreate from './pages/manage_news/create'
+import NewsUpdate from './pages/manage_news/update'
 
 const Routes = () => (
    <BrowserRouter>
       <Switch>
+         <Route exact path="/401" component={Unauthorized}/>
+
          <Route exact path="/" component={Auth} />
          <Route exact path="/forgot_password" component={ForgotPassword} />
          <Route exact path="/reset_password/:token/:userId" component={ResetPassword} />
          
          <Route exact path="/manage_news" component={NewsPanel}/>
-         <Route exact path="/manage_news/:newsId" component={NewsView}/>
-         <Route exact path="/manage_news/update/:newsId" component={NewsUpdate}/>
+         <Route exact path="/manage_news/view/:newsId" component={NewsView}/>
+         {/* <Route exact path="/manage_news/update/:newsId" component={NewsUpdate}/> */}
          <Route exact path="/manage_news/create" component={NewsCreate}/>
-
-         <Route exact path="/401" component={Unauthorized}/>
 
          <Route component={NotFound}/>        
       </Switch>

@@ -1,0 +1,18 @@
+.content-wrapper {
+  height: 110vh;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 1fr 12fr 1fr;
+  grid-template-areas: ". . ." ". main ." "footer footer footer";
+}
+
+.display {
+  grid-area: main;
+  background-color: #2a3d45;
+  color: white;
+  border-radius: 12px;
+  padding: 20px 30px;
+  margin-top: 35px;
+}
+
+/*# sourceMappingURL=style.css.map */
