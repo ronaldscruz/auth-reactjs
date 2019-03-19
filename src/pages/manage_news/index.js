@@ -51,7 +51,7 @@ export default class NewsPanel extends Component {
                   <section className="news-box-wrapper">
                      <ul className="news-list">
                         {this.state.allNewsData.map((news)=> (
-                           <li className="news-element">
+                           <li className="news-element" key={news._id}>
                               <p className="news-title">{news.title}</p>
                               <p className="news-lead">{news.lead}</p>
                               <div className="news-element-footer">
