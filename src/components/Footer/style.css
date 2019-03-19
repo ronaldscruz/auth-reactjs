@@ -1,3 +1,8 @@
+.footer{
+   margin-top: 50px;
+   grid-area: footer;
+}
+
 .footer::after{
    content: '';
    display: block;
@@ -6,7 +11,6 @@
 
 .footer-content{
    position: absolute;
-   bottom: 0;
    width: 100%;
    text-align: center;
    background-color: rgba(0, 0, 0, 1);
