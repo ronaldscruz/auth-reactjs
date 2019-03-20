@@ -49,7 +49,7 @@ class NewsCreate extends Component {
          const newsData = Array.from(e.target.elements).map((inp) => inp.value)
          let [category, title, lead, body, location] = newsData
          
-         const response = await axios.post(
+         await axios.post(
             "http://auth-api-nodejs.herokuapp.com/manage_news/create",
             { category, title, lead, body, location },
             { headers: { "Authorization": localStorage.getItem('token') } }
