@@ -27,7 +27,7 @@ const Routes = () => (
          
          <Route exact path="/manage_news" component={NewsPanel}/>
          <Route exact path="/manage_news/view/:newsId" component={NewsView}/>
-         {/* <Route exact path="/manage_news/update/:newsId" component={NewsUpdate}/> */}
+         <Route exact path="/manage_news/update/:newsId" component={NewsUpdate}/>
          <Route exact path="/manage_news/create" component={NewsCreate}/>
 
          <Route component={NotFound}/>        
