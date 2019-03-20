@@ -11,7 +11,8 @@ import { LinkContainer } from 'react-router-bootstrap'
 import {
    FaPlusCircle,
    FaDoorOpen,
-   FaUsersCog
+   FaUsersCog,
+   FaToolbox
 } from 'react-icons/fa'
 
 // Menu made for management page
@@ -31,9 +32,12 @@ export default class ControlMenu extends Component{
                <Navbar.Toggle aria-controls="header-menu"></Navbar.Toggle>
                <Navbar.Collapse id="header-menu">
                   <Nav className="mr-auto">
-                     <LinkContainer to="/manage_news/create">
+                     <LinkContainer to="/manage_news/">
+                        <Nav.Link><FaToolbox/>manage</Nav.Link>  
+                     </LinkContainer> 
+                     <LinkContainer to="/create_news/">
                         <Nav.Link><FaPlusCircle/>create</Nav.Link>
-                     </LinkContainer>                   
+                     </LinkContainer>       
                   </Nav>
                   <Form inline>
                      <Link to="/"><Button variant="outline-light btn-block"><FaDoorOpen/>Quit</Button></Link>

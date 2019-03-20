@@ -25,10 +25,10 @@ const Routes = () => (
          <Route exact path="/forgot_password" component={ForgotPassword} />
          <Route exact path="/reset_password/:token/:userId" component={ResetPassword} />
          
-         <Route exact path="/manage_news" component={NewsPanel}/>
-         <Route exact path="/manage_news/view/:newsId" component={NewsView}/>
-         <Route exact path="/manage_news/update/:newsId" component={NewsUpdate}/>
-         <Route exact path="/manage_news/create" component={NewsCreate}/>
+         <Route exact path="/manage_news/" component={NewsPanel}/>
+         <Route exact path="/view_news/:newsId" component={NewsView}/>
+         <Route exact path="/update_news/:newsId" component={NewsUpdate}/>
+         <Route exact path="/create_news/" component={NewsCreate}/>
 
          <Route component={NotFound}/>        
       </Switch>
