@@ -26,3 +26,8 @@ svg {
 textarea{
    resize: none;
 }
+
+.btn-return{
+   margin-right: 12px;
+   font-weight: bold;
+}

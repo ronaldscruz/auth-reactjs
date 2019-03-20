@@ -56,7 +56,7 @@ export default class NewsPanel extends Component {
                               <p className="news-lead">{news.lead}</p>
                               <div className="news-element-footer">
                                  <p className="news-author">Author: {news.author.name}</p>
-                                 <Link to={`/manage_news/view/${news._id}`} ><Button variant="primary" size="md"> <FaEye/> View more</Button></Link>
+                                 <Link to={`/view_news/${news._id}`} ><Button variant="primary" size="md"> <FaEye/> View more</Button></Link>
                               </div>
                            </li>
                         ))}

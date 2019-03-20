@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 import './style.css'
 
@@ -49,6 +50,10 @@ class NewsCreate extends Component {
          const newsData = Array.from(e.target.elements).map((inp) => inp.value)
          let [category, title, lead, body, location] = newsData
          
+         title.replace('"', '“')
+         lead.replace('"', '“')
+         body.replace('"', '“')
+
          await axios.post(
             "http://auth-api-nodejs.herokuapp.com/manage_news/create",
             { category, title, lead, body, location },
@@ -57,7 +62,7 @@ class NewsCreate extends Component {
 
          setTimeout(() => {
             return this.props.history.push('/manage_news')
-         }, 1800)
+         }, 2000)
 
          return this.setState({ infoType: 'success', submitCallback: 'Your news has been posted!' })
       }catch(err){
@@ -72,7 +77,7 @@ class NewsCreate extends Component {
             <ControlMenu/>
                <div className="content-wrapper">
                   <div className="display">
-                     <h2> <FaNewspaper/> Create news</h2>
+                     <h2><Link to="/manage_news/"><Button variant="warning" size="sm" className="btn-return">⮜ Return</Button></Link> <FaNewspaper/> Create news</h2>
                         <Form onSubmit={this.submitNews}>
                            <div className="form-inputs-wrapper">
                               <Form.Group controlId="category">
