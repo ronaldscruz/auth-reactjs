@@ -14,6 +14,6 @@ Password recovery is currently using MailTrap. So it doesn't works perfectly
 ### Panel (News)
 - [x] Show All
 - [x] Read One
-- [ ] Create
+- [x] Create
 - [ ] Delete
 - [ ] Update
