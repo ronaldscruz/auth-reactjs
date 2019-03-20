@@ -5,7 +5,9 @@ import './style.css'
 
 import ControlMenu from '../../../components/ControlMenu'
 import Footer from '../../../components/Footer'
+import Info from '../../../components/Info'
 
+import { Link } from 'react-router-dom'
 import { Button, ButtonGroup } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { FaNewspaper, FaPencilAlt, FaTrash } from 'react-icons/fa'
@@ -15,9 +17,12 @@ export default class NewsPanel extends Component {
       super(props);
       this.state = { 
          authorized: false,
-         newsData: {}
+         newsData: {},
+         callback: '',
+         callbackType: '',
       }
 
+      this.delete = this.delete.bind(this)
    }
 
    async componentWillMount(){
@@ -45,9 +50,19 @@ export default class NewsPanel extends Component {
          return
 
       try{
-         
+         await axios.delete(`http://auth-api-nodejs.herokuapp.com/manage_news/remove/${this.props.match.params.newsId}`, {
+            headers: {
+               "Authorization": localStorage.getItem('token')
+            }
+         })
+
+         setTimeout(()=>{
+            this.props.history.push('/manage_news')
+         }, 1700)
+
+         return this.setState({ callback: 'News deleted', callbackType: 'success'})
       }catch(err){
-         
+         return this.setState({ callback: err.response.data.error, callbackType: 'error'})
       }
    }
 
@@ -61,10 +76,13 @@ export default class NewsPanel extends Component {
             <ControlMenu/>
             <div className="content-wrapper">
                <div className="display">
-                  <h2 className="main-header"> <FaNewspaper/> News details</h2>
+                  <div className="header-box">
+                     <h2> <Link to="/manage_news/"><Button variant="warning" size="sm" className="btn-return">⮜ Return</Button></Link> <FaNewspaper/> News details </h2>       
+                     <Info infoType={this.state.callbackType} msg={this.state.callback} />
+                  </div>
                   <div className="control-buttons">
                      <ButtonGroup>
-                        <LinkContainer to={`/manage_news/update/${this.props.match.params.newsId}`}>
+                        <LinkContainer to={`/update_news/${this.props.match.params.newsId}`}>
                            <Button variant="primary" className="control-button"><FaPencilAlt/> Edit </Button>
                         </LinkContainer>
                         <Button variant="secondary" className="control-button" onClick={this.delete}><FaTrash/> Delete </Button>
