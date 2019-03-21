@@ -15,5 +15,5 @@ Password recovery is currently using MailTrap. So it doesn't works perfectly
 - [x] Show All
 - [x] Read One
 - [x] Create
-- [ ] Delete
-- [ ] Update
+- [x] Delete
+- [x] Update

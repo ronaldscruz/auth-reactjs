@@ -47,6 +47,10 @@ class NewsUpdate extends Component {
    
    async submitUpdate(e){
       e.preventDefault()
+
+      if(!(window.confirm("Are you sure you want to update?")))
+         return
+
       try{
          const newsData = Array.from(e.target.elements).map((inp) => inp.value)
          let [category, title, lead, body, location] = newsData
@@ -55,7 +59,7 @@ class NewsUpdate extends Component {
          lead.replace('"', '“')
          body.replace('"', '“')
 
-         const response = await axios.post(
+         const response = await axios.put(
             `http://auth-api-nodejs.herokuapp.com/manage_news/update/${this.props.match.params.newsId}`,
             { category, title, lead, body, location },
             { headers: { "Authorization": localStorage.getItem('token') } }
@@ -72,7 +76,7 @@ class NewsUpdate extends Component {
    }
    
    render() { 
-      const { category, title, lead, body, location } = this.state.inputData
+      const data = { ...this.state.inputData }
       return (
          this.state.authorized === true &&
          <React.Fragment>
@@ -84,28 +88,28 @@ class NewsUpdate extends Component {
                            <div className="form-inputs-wrapper">
                               <Form.Group controlId="category">
                                  <Form.Label><FaFolder/>Category </Form.Label>
-                                 <Form.Control type="text" placeholder="news category" name="category" value={category} required/>
+                                 <Form.Control type="text" placeholder="news category" name="category" defaultValue={data.category} required/>
                               </Form.Group>
                               <Form.Group controlId="title">
                                  <Form.Label><FaMarker/>Title </Form.Label>
-                                 <Form.Control type="text" placeholder="give a title to your news" name="title" value={title} required/>
+                                 <Form.Control type="text" placeholder="give a title to your news" name="title" defaultValue={data.title} required/>
                               </Form.Group>
                               <Form.Group controlId="lead">
                                  <Form.Label><FaThLarge/>Lead </Form.Label>
-                                 <Form.Control as="textarea" rows="4" type="text" placeholder="a short lead" name="lead" value={lead} required/>
+                                 <Form.Control as="textarea" rows="4" type="text" placeholder="a short lead" name="lead" defaultValue={data.lead} required/>
                               </Form.Group>
                               <Form.Group controlId="body">
                                  <Form.Label><FaParagraph/>Body </Form.Label>
-                                 <Form.Control as="textarea" rows="10" type="text" placeholder="news body" name="body" wrap="hard" value={body}  required/>
+                                 <Form.Control as="textarea" rows="10" type="text" placeholder="news body" name="body" wrap="hard" defaultValue={data.body}  required/>
                               </Form.Group>
                               <Form.Group controlId="location">
                                  <Form.Label><FaLocationArrow/>Location </Form.Label>
-                                 <Form.Control type="text" placeholder="where did it happened?" name="location" value={location} required/>
+                                 <Form.Control type="text" placeholder="where did it happened?" name="location" defaultValue={data.location} required/>
                               </Form.Group>                             
                            </div>
                            <Info msg={this.state.submitCallback} infoType={this.state.infoType}/>
                            <ButtonGroup>
-                              <Button variant="primary" type="submit"> <FaPaperPlane/> Submit</Button>
+                              <Button variant="primary" type="submit"> <FaPaperPlane/> Submit update</Button>
                               <Button variant="secondary"> <FaTimesCircle/> Cancel</Button>
                            </ButtonGroup>
                         </Form>

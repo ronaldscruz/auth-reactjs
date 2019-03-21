@@ -90,11 +90,11 @@ class NewsCreate extends Component {
                               </Form.Group>
                               <Form.Group controlId="lead">
                                  <Form.Label><FaThLarge/>Lead </Form.Label>
-                                 <Form.Control as="textarea" rows="4" type="text" placeholder="a short lead" name="lead" required></Form.Control>
+                                 <Form.Control as="textarea" rows="4" type="text" placeholder="a short lead" name="lead" required/>
                               </Form.Group>
                               <Form.Group controlId="body">
                                  <Form.Label><FaParagraph/>Body </Form.Label>
-                                 <Form.Control as="textarea" rows="10" type="text" placeholder="news body" name="body" wrap="hard" required></Form.Control>
+                                 <Form.Control as="textarea" rows="10" type="text" placeholder="news body" name="body" wrap="hard" required/>
                               </Form.Group>
                               <Form.Group controlId="location">
                                  <Form.Label><FaLocationArrow/>Location </Form.Label>
