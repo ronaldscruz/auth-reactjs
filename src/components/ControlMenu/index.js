@@ -20,8 +20,17 @@ import {
 export default class ControlMenu extends Component{
    constructor(props){
       super(props)
-      
+
       this.state = {}
+
+      this.quitSession = this.quitSession.bind(this)
+   }
+
+   quitSession(){
+      if(!(window.confirm("Are you sure you want to quit?")))
+         return
+
+      return this.props.history.push('/')
    }
 
    render(){
@@ -40,7 +49,7 @@ export default class ControlMenu extends Component{
                      </LinkContainer>       
                   </Nav>
                   <Form inline>
-                     <Link to="/"><Button variant="outline-light btn-block"><FaDoorOpen/>Quit</Button></Link>
+                     <Button variant="outline-light btn-block" onClick={this.quitSession}><FaDoorOpen/>Quit</Button>
                   </Form>
                </Navbar.Collapse>
             </Navbar>

@@ -74,7 +74,7 @@ class NewsCreate extends Component {
       return (
          this.state.authorized === true &&
          <React.Fragment>
-            <ControlMenu/>
+            <ControlMenu {...this.props}/>
                <div className="content-wrapper">
                   <div className="display">
                      <h2><Link to="/manage_news/"><Button variant="warning" size="sm" className="btn-return">⮜ Return</Button></Link> <FaNewspaper/> Create news</h2>

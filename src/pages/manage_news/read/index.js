@@ -73,7 +73,7 @@ export default class NewsPanel extends Component {
          // If there is authorization, the component will be shown
          this.state.authorized === true &&
          <React.Fragment>
-            <ControlMenu/>
+            <ControlMenu {...this.props}/>
             <div className="content-wrapper">
                <div className="display">
                   <div className="header-box">
