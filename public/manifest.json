@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Auth ReactJS",
+  "name": "ReactJS Interface for auth-api-nodejs",
   "icons": [
     {
       "src": "favicon.ico",
